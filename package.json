@@ -1,0 +1,31 @@
+{
+  "name": "keymap",
+  "description": "Compacts/expands keys in an object.",
+  "version": "0.0.1",
+  "author": "Mathias Kretschek <mathias@kretschek.com.br>",
+  "contributors": [
+    "Mathias Kretschek <mathias@kretschek.com.br>"
+  ],
+  "bugs": "https://github.com/mkretschek/node-keymap/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mkretschek/node-keymap"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "dependencies": {
+    "underscore": "~1.5.2",
+    "js-yaml": "~2.1.3"
+  },
+  "devDependencies": {
+    "chai": "~1.8.1",
+    "sinon": "~1.7.3",
+    "sinon-chai": "~2.4.0",
+    "mocha": "~1.13.0"
+  },
+  "engine": {
+    "node": "~0.10.15"
+  },
+  "main": "./index.js"
+}
