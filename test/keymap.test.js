@@ -342,6 +342,16 @@ describe('keymap', function () {
         expect(map.getKey('f')).to.equal('foo');
         expect(map.getKey('b')).to.equal('bar');
       });
+
+      it('allows chaining', function () {
+        expect(map.getAbbr('foo')).to.equal('foo');
+        expect(map.getAbbr('bar')).to.equal('bar');
+
+        map.add('foo', 'f').add('bar', 'b');
+
+        expect(map.getAbbr('foo')).to.equal('f');
+        expect(map.getAbbr('bar')).to.equal('b');
+      });
     }); // #add()
 
     describe('#import()', function () {
@@ -375,6 +385,18 @@ describe('keymap', function () {
         expect(map.getAbbr('baz')).to.equal('baz');
         map.import(path.join(__dirname, 'keymap.yml'));
         expect(map.getAbbr('baz')).to.equal('b');
+      });
+
+      it('allows chaining', function () {
+        expect(map.getAbbr('foo')).to.equal('foo');
+        expect(map.getAbbr('bar')).to.equal('bar');
+
+        map
+          .import(path.join(__dirname, 'keymap.module.js'))
+          .import(path.join(__dirname, 'keymap.json'));
+
+        expect(map.getAbbr('foo')).to.equal('f');
+        expect(map.getAbbr('bar')).to.equal('b');
       });
     }); // #import()
 
