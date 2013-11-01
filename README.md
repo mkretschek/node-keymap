@@ -39,7 +39,7 @@ map
   .add('foo', 'f')
   .add('bar', 'b');
 
-map.getAbbr('foo'); // > 'f'
+map.getAbbr('foo'); //> 'f'
 
 
 // Passing an object to #add()
@@ -48,8 +48,8 @@ map.add({
   baz : 'bz'
 });
 
-map.getAbbr('bar'); // > 'b'
-map.getKey('bz'); // > 'baz'
+map.getAbbr('bar'); //> 'b'
+map.getKey('bz'); //> 'baz'
 ```
 
 Both will have exactly the same result.
@@ -86,10 +86,10 @@ throw an error if found.
 
 ```js
 // Duplicate abbreviations are not allowed
-map.add('bar', 'b').add('baz', 'b); // > err
+map.add('bar', 'b').add('baz', 'b'); //> err
 
 // Duplicate keys are not allowed either
-map.add('bar', 'b').add('bar', 'b_'); // > err
+map.add('bar', 'b').add('bar', 'b_'); //> err
 ```
 
 Abbreviating and expanding your keys
@@ -107,16 +107,16 @@ form of simple strings.
 ```js
 map.add('foo', 'f').add('bar', 'b');
 
-map.getAbbr('foo'); // > 'f'
-map.getKey('f'); // > 'foo'
+map.getAbbr('foo'); //> 'f'
+map.getKey('f'); //> 'foo'
 
 // They work with dot-separated keys...
-map.getAbbr('foo.bar'); // > 'f.b'
-map.getKey('f.b'); // > 'foo.bar'
+map.getAbbr('foo.bar'); //> 'f.b'
+map.getKey('f.b'); //> 'foo.bar'
 
 // and with an array too.
-map.getAbbr(['foo', 'bar']); // > ['f', 'b']
-map.getKey(['f', 'b']); // > ['foo', 'bar']
+map.getAbbr(['foo', 'bar']); //> ['f', 'b']
+map.getKey(['f', 'b']); //> ['foo', 'bar']
 ```
 
 These methods default to the original value if no abbr/key is found:
@@ -124,8 +124,8 @@ These methods default to the original value if no abbr/key is found:
 ```js
 map.add('foo', 'f');
 
-map.getAbbr('foobar'); // > 'foobar'
-map.getKey('foobar'); // > 'foobar'
+map.getAbbr('foobar'); //> 'foobar'
+map.getKey('foobar'); //> 'foobar'
 ```
 
 `#compact()` and `#expand()` work on entire objects:
@@ -133,18 +133,18 @@ map.getKey('foobar'); // > 'foobar'
 ```js
 map.add({foo : 'f', bar : 'b');
 
-map.compact({foo : 'foo', bar : 'bar'}); // > {f : 'foo', b : 'bar}
-map.expand({f : 'foo', b : 'bar'}); // > {foo : 'foo', bar : 'bar'}
+map.compact({foo : 'foo', bar : 'bar'}); //> {f : 'foo', b : 'bar}
+map.expand({f : 'foo', b : 'bar'}); //> {foo : 'foo', bar : 'bar'}
 ```
 
 They will compact/expand keys in nested objects too:
 
 ```js
 // Objects inside objects
-map.compact({foo : {bar : 'baz'}}); // > {f : {b : 'baz'}}
+map.compact({foo : {bar : 'baz'}}); //> {f : {b : 'baz'}}
 
 // Objects in arrays
-map.compact([{foo : 'bar'}]); // > [{f : 'bar'}]
+map.compact([{foo : 'bar'}]); //> [{f : 'bar'}]
 ```
 
 But there's one caveat: it works only with object literals. Any other object
@@ -152,7 +152,7 @@ will be returned as is.
 
 ```js
 var now = new Date();
-map.compcat(now) === now; // > true
+map.compcat(now) === now; //> true
 ```
 
 Also note that `#compact()` and `#expand()` won't have the same behavior as
@@ -161,11 +161,11 @@ to abbreviate/expand it**, returning the original value.
 
 ```js
 map.add('foo', 'f');
-map.getAbbr('foo'); // > 'f'
-map.compact('foo'); // > 'foo'
+map.getAbbr('foo'); //> 'f'
+map.compact('foo'); //> 'foo'
 
-map.getKey('f'); // > 'foo'
-map.expand('f'); // > 'f'
+map.getKey('f'); //> 'foo'
+map.expand('f'); //> 'f'
 ```
 
 Contributing
