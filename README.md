@@ -5,6 +5,10 @@ keymap
 is to process objects before saving them to the database/cache and after
 retrieving them.
 
+The motivation behind it was to make objects smaller before storing them in
+a database, such as [MongoDB][], for example, saving a reasonable amount of
+disk space.
+
 Installation
 ------------
 
@@ -61,7 +65,7 @@ work with `require()`. `keymap` uses the [js-yaml][] package to make this
 work with Yaml files.
 
 ```js
-// works with json files
+// Works with json files
 map.import(path.join(__dirname, 'keymap.json'));
 
 // Works with yaml files
@@ -152,7 +156,7 @@ will be returned as is.
 
 ```js
 var now = new Date();
-map.compcat(now) === now; //> true
+map.compact(now) === now; //> true
 ```
 
 Also note that `#compact()` and `#expand()` won't have the same behavior as
@@ -188,4 +192,4 @@ Created by [Mathias Kretschek][mathias] ([mkretschek][]).
 [js-yaml]: https://github.com/nodeca/js-yaml
 [mathias]: http://mathias.ms
 [mkretschek]: https://github.com/mkretschek
-
+[MongoDB]: http://www.mongodb.org
