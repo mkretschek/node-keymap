@@ -1,0 +1,7 @@
+test/
+logs/
+Makefile
+.git*
+.jshintrc
+*.swp
+*.log
