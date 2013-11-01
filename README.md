@@ -1,6 +1,10 @@
 keymap
 ======
 
+[![Build Status](https://travis-ci.org/mkretschek/node-keymap.png?branch=master)](https://travis-ci.org/mkretschek/node-keymap)
+[![NPM version](https://badge.fury.io/js/keymap.png)](http://badge.fury.io/js/keymap)
+[![Dependency Status](https://gemnasium.com/mkretschek/node-keymap.png)](https://gemnasium.com/mkretschek/node-keymap)
+
 `keymap` is a tool for compacting/expanding keys in an object. Its main use
 is to process objects before saving them to the database/cache and after
 retrieving them.
