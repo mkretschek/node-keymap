@@ -38,7 +38,11 @@ Defining keys
 -------------
 
 `keymap` gives you some options as to how to define your keys and
-abbreviations. If you wish to define or key-abbr pairs directly in your code,
+abbreviations. The `keymap()` function accepts one optional argument, which
+can be either an object containing a key-abbr map (see `#add()`) or a string
+with the path to a file containing the mapping (see `#import()` below).
+
+If you wish to define or key-abbr pairs directly in your code,
 you may use the `#add()` method:
 
 ```js

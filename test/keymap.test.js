@@ -4,7 +4,8 @@
 
 var chai = require('chai'),
   expect = chai.expect,
-  keymap = require('../');
+  keymap = require('../'),
+  path = require('path');
 
 describe('keymap', function () {
   it('is accessible', function () {
@@ -19,6 +20,13 @@ describe('keymap', function () {
     var map = keymap();
     expect(map).to.be.an('object');
     expect(map).to.be.instanceof(keymap.KeyMap);
+  });
+
+  it('passes the map to the constructor', function () {
+    var map = keymap({
+      baz : 'b'
+    });
+    expect(map.getAbbr('baz')).to.equal('b');
   });
 
   describe('.KeyMap()', function () {
@@ -37,6 +45,18 @@ describe('keymap', function () {
       expect(keymap.KeyMap).to.be.a('function');
       expect(map.constructor).to.equal(keymap.KeyMap);
       expect(map instanceof keymap.KeyMap).to.be.true;
+    });
+
+    it('imports keymap from file if argument is a string', function () {
+      map = new keymap.KeyMap(path.join(__dirname, 'keymap.module.js'));
+      expect(map.getAbbr('foo')).to.equal('f');
+    });
+
+    it('adds key-abbr pairs if argument is an object', function () {
+      map = new keymap.KeyMap({
+        bar : 'b'
+      });
+      expect(map.getAbbr('bar')).to.equal('b');
     });
 
     describe('#getAbbr()', function () {
@@ -355,8 +375,6 @@ describe('keymap', function () {
     }); // #add()
 
     describe('#import()', function () {
-      var path = require('path');
-
       beforeEach(function () {
         map = keymap();
       });

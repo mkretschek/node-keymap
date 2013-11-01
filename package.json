@@ -1,7 +1,7 @@
 {
   "name": "keymap",
   "description": "Compacts/expands keys in an object.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Mathias Kretschek <mathias@kretschek.com.br>",
   "contributors": [
     "Mathias Kretschek <mathias@kretschek.com.br>"
