@@ -1,3 +1,10 @@
+0.0.3 / 2013-11-18
+==================
+
+* fix: keymap.compact() and keymap.expand() now works with `null` and
+    `undefined`.
+
+
 0.0.2 / 2013-10-31
 ==================
 

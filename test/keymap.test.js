@@ -185,6 +185,8 @@ describe('keymap', function () {
       });
 
       it('does nothing to other values', function () {
+        expect(map.compact(null)).to.equal(null);
+        expect(map.compact(undefined)).to.equal(undefined);
         expect(map.compact('foo')).to.equal('foo');
         expect(map.compact(123)).to.equal(123);
       });
@@ -277,6 +279,8 @@ describe('keymap', function () {
       });
 
       it('does nothing to other values', function () {
+        expect(map.expand(null)).to.equal(null);
+        expect(map.expand(undefined)).to.equal(undefined);
         expect(map.expand('foo')).to.equal('foo');
         expect(map.expand(123)).to.equal(123);
       });
