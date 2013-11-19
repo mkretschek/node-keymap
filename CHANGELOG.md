@@ -1,3 +1,9 @@
+0.0.4 / 2013-11-19
+==================
+
+* improvement: `keymap.debug` can now be set to `true` to warn about missing
+    abbreviations.
+
 0.0.3 / 2013-11-18
 ==================
 
